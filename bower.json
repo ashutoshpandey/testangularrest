@@ -1,0 +1,16 @@
+{
+    "name": "medical-tourism",
+    "version": "0.0.1",
+    "ignore": [
+        "**/.*",
+        "front/node_modules",
+        "public/front"
+    ],
+    "dependencies": {
+        "angular": "^1.6.7",
+        "angular-route": "^1.6.7",
+        "bootstrap": "^3.3.7",
+        "angular-messages": "^1.6.8",
+        "font-awesome": "^4.7.0"
+    }
+}

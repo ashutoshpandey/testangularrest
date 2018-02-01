@@ -1,0 +1,36 @@
+<html ng-app="main">
+<head>
+    <!-- META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+    <title>REST Client</title>
+
+    <link rel="stylesheet" href="front/static/lib/bootstrap/dist/css/bootstrap.min.css"/>
+
+</head>
+<body ng-controller="UserCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div ng-repeat="user in users">
+                    Id: {{user.id}} <br/>
+                    Body: {{user.body}}
+                    <hr/>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="front/static/lib/angular/angular.min.js"></script>
+
+    <script type="text/javascript">
+        angular.module('main', []);
+    </script>
+
+    <script type="text/javascript" src="front/util/constants.js"></script>
+    <script type="text/javascript" src="front/services/http-serv.js"></script>
+    <script type="text/javascript" src="front/services/user-serv.js"></script>
+    <script type="text/javascript" src="front/controllers/user-ctrl.js"></script>
+</body>
+</html>

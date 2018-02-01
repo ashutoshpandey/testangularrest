@@ -1,0 +1,133 @@
+<div ng-app="main">
+    <div>
+        <div class="row bg-title">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h4 class="page-title">View User</h4> 
+            </div>
+            <div class="col-lg-6 col-md-6 text-right">
+                <button type="button" ng-click="editData(Form)" class="btn btn-info waves-effect waves-light m-r-10">Edit</button>
+                <button type="button" ng-click="backToManage()" class="btn btn-inverse waves-effect waves-light">Back</button>
+            </div>
+        </div>
+        <!-- .row -->
+        <div class="row">
+            <div class="col-md-4 col-xs-12">
+                <div class="white-box">
+                    <div class="user-bg"> <img width="100%" alt="user" src="front/static/template/images/big/d2.jpg"> </div>
+                    <div class="user-btm-box">
+                        <div class="row text-center m-t-10">
+                            <div class="col-md-6 b-r"><strong>Name</strong>
+                                <p> {{user.first_name}} {{user.middle_name}} {{user.last_name}}&nbsp;</p>
+                            </div>
+                            <div class="col-md-6 b-r"><strong>Role</strong>
+                                <p>{{user.Role.name}}&nbsp;</p>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="row text-center m-t-10">
+                            <div class="col-md-12"><strong>Address</strong>
+                                <p>{{user.UserAddresses[0].address}}<br/>
+                                    {{user.UserAddresses[0].city}}, {{user.UserAddresses[0].zip}}
+                                    <br/> {{user.UserAddresses[0].state}}, {{user.UserAddresses[0].Country.name}}.&nbsp;</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-xs-12">
+                <div class="white-box">
+                    <!-- .tabs -->
+                    <ul class="nav nav-tabs tabs customtab">
+                        <li class="active tab">
+                            <a href="#home" data-toggle="tab" target="_self"> <span class="visible-xs"><i class="fa fa-home"></i></span> <span class="hidden-xs">Details</span> </a>
+                        </li>
+                    </ul>
+                    <!-- /.tabs -->
+                    <form class="form-material form-horizontal" novalidate>
+                        <div class="tab-content">
+                            <!-- .tabs 1 -->
+                            <div class="tab-pane active" id="home">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                        <div class="form-group">
+                                            <label class="col-sm-12">Gender</label>
+                                            <div class="col-sm-12">
+                                                {{user.gender}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="bdate">Date of birth</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.date_of_birth | date:'MM/dd/yyyy'}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12">Highest qualification</label>
+                                            <div class="col-md-12">
+                                                {{user.highest_qualification}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="url">Nationality</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.nationality}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="url">Blood group</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.blood_group}}&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-6 col-lg-6">
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="bdate">Email</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.email}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="url">Phone number</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.phone_number}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12">Alternate email</label>
+                                            <div class="col-md-12">
+                                                {{user.email_alternate}}&nbsp;
+                                            </div>
+                                        </div>
+                                        <hr/>
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="url">Alternate phone number</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                {{user.phone_number_alternate}}&nbsp;
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="speciality">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>

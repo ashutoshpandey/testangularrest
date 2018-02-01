@@ -1,0 +1,207 @@
+<div ng-app="main">
+    <div>
+        <div class="row bg-title">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <h4 class="page-title">Edit User</h4> 
+            </div>
+            <div class="col-lg-6 col-md-6 text-right">
+                <button type="button" ng-click="update(Form)" class="btn btn-info waves-effect waves-light m-r-10">Update</button>
+                <button type="button" ng-click="cancelEdit()" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+            </div>
+        </div>
+        <div class="row">
+            <form name="Form" class="form-material form-horizontal" novalidate>
+                <div class="col-md-3 col-xs-12">
+                    <div class="white-box">
+                        <div class="user-bg"> 
+                            <img width="100%" alt="user" src="front/static/template/images/big/d2.jpg"/>
+                        </div>
+                        <div class="user-btm-box form-material form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-10">Role</label>
+                                <div class="col-md-10">
+                                    <select ng-model="user.role_id" ng-options='role.id as role.name for role in roles' class="form-control">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Email <span class="mandatory">*</span>
+                                </label>
+                                <div class="col-md-12">
+                                    <input type="text" ng-model="user.email" class="form-control" placeholder="enter email"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Phone number <span class="mandatory">*</span>
+                                </label>
+                                <div class="col-md-12">
+                                    <input type="text" ng-model="user.phone_number" class="form-control" placeholder="enter phone number"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9 col-xs-12">
+                    <div class="white-box">
+                        <!-- .tabs -->
+                        <ul class="nav nav-tabs tabs customtab">
+                            <li class="active tab">
+                                <a href="#home" data-toggle="tab" target="_self"> <span class="visible-xs"><i class="fa fa-home"></i></span> <span class="hidden-xs">Details</span> </a>
+                            </li>
+                            <li class="tab">
+                                <a href="#address" data-toggle="tab" target="_self"> <span class="visible-xs"><i class="fa fa-home"></i></span> <span class="hidden-xs">Address</span> </a>
+                            </li>
+                        </ul>
+                        <!-- /.tabs -->
+                        <div class="tab-content">
+                            <!-- .tabs 1 -->
+                            <div class="tab-pane active" id="home">
+                                <div class="form-material form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="col-md-10">First name <span class="mandatory">*</span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.first_name" class="form-control" placeholder="enter name"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Middle name</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.middle_name" class="form-control" placeholder="enter name"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Last name</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.last_name" class="form-control" placeholder="enter name"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-sm-10">Gender <span class="mandatory">*</span>
+                                                </label>
+                                                <div class="col-sm-10">
+                                                    <select ng-model="user.gender" class="form-control">
+                                                        <option selected="selected">Male</option>
+                                                        <option>Female</option>
+                                                        <option>Other</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10" for="bdate">Date of birth <span class="mandatory">*</span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.date_of_birth" class="form-control mydatepicker" placeholder="enter date of birth"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="col-md-10">Highest qualification</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control" ng-model="user.highest_qualification"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10" for="url">Nationality <span class="mandatory">*</span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <select ng-model="user.nationality" ng-options='country.name as country.name for country in countries' class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10" for="url">Blood group <span class="mandatory">*</span>
+                                                </label>
+                                                <div class="col-md-10">
+                                                    <select ng-model="user.blood_group" class="form-control">
+                                                        <option>A+</option>
+                                                        <option>B+</option>
+                                                        <option>AB+</option>
+                                                        <option>O+</option>
+                                                        <option>A-</option>
+                                                        <option>B-</option>
+                                                        <option>AB-</option>
+                                                        <option>O-</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Alternate email</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control" ng-model="user.alternate_email"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Alternate phone number</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" class="form-control" ng-model="user.alternate_phone_number"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tabs1 -->
+                            <!-- .tabs 2 -->
+                            <div class="tab-pane" id="address">
+                                <div class="form-material form-horizontal">
+                                    <div class="row">
+                                        <div class="col-md-6 col-lg-6">                                
+                                            <div class="form-group">
+                                                <label class="col-md-10">Address</label>
+                                                <div class="col-md-10">
+                                                    <textarea rows="3" ng-model="user.UserAddresses[0].address" class="form-control" placeholder="enter address"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">City</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.UserAddresses[0].city" class="form-control" placeholder="enter city"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">State</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.UserAddresses[0].state" class="form-control" placeholder="enter state"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-lg-6">
+                                            <div class="form-group">
+                                                <label class="col-md-10">Landmark</label>
+                                                <div class="col-md-10">
+                                                    <textarea type="text" rows="3" ng-model="user.UserAddresses[0].landmark" class="form-control" placeholder="enter nearest landmark"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Zip</label>
+                                                <div class="col-md-10">
+                                                    <input type="text" ng-model="user.UserAddresses[0].zip" class="form-control" placeholder="enter zip"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-10">Country</label>
+                                                <div class="col-md-10">
+                                                    <select ng-model="user.UserAddresses[0].country_id" ng-options='country.id as country.name for country in countries' class="form-control">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.tabs2 -->
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.row -->
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery('.mydatepicker').datepicker();
+</script>
